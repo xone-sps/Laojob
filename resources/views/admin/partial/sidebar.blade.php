@@ -1,4 +1,3 @@
-
         <div class="nav-left-sidebar sidebar-dark">
             <div class="menu-list">
                 <nav class="navbar navbar-expand-lg navbar-light">
@@ -9,14 +8,14 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav flex-column">
                             <li class="nav-divider">
-                            	<a class="nav-link" href="#"> Dashboard</a>        
+                            	<a class="nav-link" href="{{route('index.admin')}}"> Dashboard</a>        
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-9" aria-controls="submenu-9"><i class="fab fa-fw fa-wpforms"></i></i>Job</a>
                                 <div id="submenu-9" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">All job</a>
+                                            <a class="nav-link {{route::current()->getName() == 'job' ? 'active' : ''}}" href="{{route('job')}}">All job</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{ Route('job.add') }}">Add job</a>

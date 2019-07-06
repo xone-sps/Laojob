@@ -9,7 +9,8 @@ class HomeController extends Controller
 {
     public function home(){
 
-    $jobs = PostJob::all();
+    // $jobs = PostJob::all();
+        $jobs = PostJob::orderBy('id','desc')->paginate(4);
 
     	return view('pages.home',compact('jobs'));
     }

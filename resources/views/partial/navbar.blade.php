@@ -17,7 +17,7 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
                     <li class="dropdown megamenu-fw">
-                        <a href="/" class="dropdown-toggle" data-toggle="dropdown">Brows</a>
+                        <a href="/" class="{{Request::is('/') ? 'active' :'' }} ">Home</a>
                         <ul class="dropdown-menu megamenu-content" role="menu">
                             <li>
                                 <div class="row">
@@ -97,7 +97,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li><a href="{{ route('blog') }}">Blog</a></li>
+                    <li><a class="{{ Route::current()->getName() == 'blog' ? 'active' : '' }}" href="{{ route('blog') }}">Blog</a></li>
                 </ul>
             </div>
         </div>
