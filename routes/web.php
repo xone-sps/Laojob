@@ -31,3 +31,7 @@ Route::post('/admins/job/delete/{id}','AdminController@Deletejob')->name('job.de
 
 Route::get('admin/job/search','AdminController@search')->name('search');
 // Route::delete('/admins/job/delete/{id}','AdminController@Deletejob')->name('job.delete');
+// Auth::routes();
+
+Route::get('/admin/login', 'LoginController@getlogin')->name('get.login');
+Route::post('/admin/login', 'LoginController@postLogin')->name('login.post');

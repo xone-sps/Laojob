@@ -97,7 +97,7 @@ protected $uploadPath ='/images/';
     	} catch (Exception $e) {	
     	}
     	$deletejob->delete();
-    	return back();
+    	return redirect()->route('job.all');
 
     }
 

@@ -70,14 +70,12 @@
                                             <td><a href="{{}}" class="btn btn-outline-light float-right">View Details</a></td>
                                         </tr> --}}
                                     </table>
-                                    <section class="container-paginate text-center">
-                                    	<div class="paginate-center">
-                                    		<nav class="nav-lef-right wrap-paginate js-center" aria-label="Page navigation activity">
-                                    			{{ $alljob->links() }}
-                                    		</nav>
-                                    	</div>
+                                    <div class="paginate-center">
+                                    	<nav aria-label="Page navigation example">
+                                    		{{ $alljob->links() }}
 
-                                    </section>
+                                    	</nav>
+                                    </div>
                                 </div>
                             </div>
                         </div>

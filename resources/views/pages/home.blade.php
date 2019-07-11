@@ -98,12 +98,12 @@
                 </div>
 @endforeach
             </div>
-
+{{-- 
         <div class="paginate-center">
      <nav class="nav-lef-right wrap-paginate js-center" aria-label="Page navigation activity">
         {{ $jobs->links() }}
     </nav>
-        </div>
+        </div> --}}
 
 
         </div>

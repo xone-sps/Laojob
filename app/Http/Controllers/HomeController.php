@@ -2,25 +2,36 @@
 
 namespace App\Http\Controllers;
 
-use\App\PostJob;
 use Illuminate\Http\Request;
+use App\PostJob;
 
 class HomeController extends Controller
 {
-    public function home(){
-
-    // $jobs = PostJob::all();
-        $jobs = PostJob::orderBy('id','desc')->paginate(4);
-
-    	return view('pages.home',compact('jobs'));
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        // $this->middleware('auth');
     }
 
-    public function blog(){
-    	return view('pages.blog');
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function login()
+    {
+         return view('login.index');
+    }
+    public function home(){
+        $jobs = PostJob::all();
+        return view('pages.home', compact('jobs'));
     }
     public function jobDetail($id){
-     $jobDetail = PostJob::find($id);
-    	return view('pages.jobdetail', compact('jobDetail'));
+        $jobDetail = PostJob::find($id);
+        return view('pages.jobdetail',compact('jobDetail'));
     }
-
 }
