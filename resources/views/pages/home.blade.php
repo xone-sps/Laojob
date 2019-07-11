@@ -24,8 +24,6 @@
                                     <option>London</option>
                                     <option>England</option>
                                     <option>Pratapcity</option>
-                                    <option>Ukrain</option>
-                                    <option>Wilangana</option>
                                 </select>
                             </div>
                         </div>
