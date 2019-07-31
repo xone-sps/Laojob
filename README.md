@@ -2,9 +2,9 @@
 web application for manage job, using laravel and boostrap
 # How to use
 #install composer
-&nbsp;
+<br />
  #create databae
   # run command
 #php artisan migrate
-&nbsp;
+<br />
 #php artisan serve
