@@ -1,8 +1,8 @@
 # Laojob
 web application for manage job, using laravel and boostrap 
-How to use
+# How to use
 #install composer
 #create databae
-run command
+  # run command
 #php artisan migrate
 #php artisan serve
