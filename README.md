@@ -1,9 +1,9 @@
 # Laojob
 web application for manage job, using laravel and boostrap
 # How to use
-#install composer
+#install composer link https://getcomposer.org/download/
 <br />
- #create databae
+ #create databae (call name 'job')
   # run command
 #php artisan migrate
 <br />
