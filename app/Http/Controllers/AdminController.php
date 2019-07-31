@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use\App\PostJob;
+use\App\Province;
+use\App\District;
+use\DB;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -110,4 +113,97 @@ protected $uploadPath ='/images/';
 			return view('admin.posts.job.alljob', compact('alljob', 'total'));
 		
 }
+
+public function getProvince(){
+    $provinces = Province::all();
+
+    return view('admin.posts.province.index', compact('provinces'));
+}
+public function SaveProvince(Request $request){
+    $this->validate($request, [
+    'province_name' => 'required'
+    ]);
+    $save = new Province();
+    $save ->name = $request->province_name;
+    $save->save();
+    return back();
+
+}
+public function EditProvince($id){
+    $edit = Province::find($id);
+    return view('admin.posts.province.index',compact('edit'));
+}
+public function UpdateProvince(Request $request , $id){
+
+    $this->validate($request ,[
+    'province_name' => 'required'
+    ]);
+$update = Province::find($id);
+$update ->name = $request->province_name;
+$update->save();
+return redirect(route('province.get'));
+
+}
+public function DeleteProvince($id){
+
+$delete = Province::find($id);
+$delete->delete();
+return back();
+
+}
+public function getDistrict(){
+
+   $provinces = Province::all();
+   $districts = District::all();
+    return view('admin.posts.district.index',compact('provinces','districts'));
+
+}
+public function SaveDistrict(Request $request){
+ $this->validate($request, [
+  'district_name' => 'required',
+  'province_name' => 'required'
+
+ ]);
+ $save = new District();
+ $save ->name = $request->district_name;
+ $save ->province_id = $request->province_name;
+ $save ->save();
+ return back();
+}
+
+
+
+
+public function getFreelancer(){
+    $provinces = Province::all();
+    return view('admin.posts.freelancer.index',compact('provinces'));
+}
+// public function Fetch(Request $request){
+//     $id=$request->get('select');
+//     $result=array();
+//     $query = Province::all()->join('District','province_id','=','District.province_id')
+//     ->select('District.name')->where('provinces.id',$id)->groupBy('districts.name')->get();
+//     $output='<option value="">Select District</option>';
+
+//     foreach ($query as $row) {
+//        $output .='<option value="'.$row->name.'">'.$row->name.'</option>';
+//     }
+//     echo $output;
+
+// }
+
+public function Fetch(Request $request){
+    $id=$request->get('select');
+    $result=array();
+    $query = DB::table('provinces')->join('districts','provinces.id','=','districts.province_id')
+    ->select('districts.name')->where('provinces.id',$id)->groupBy('districts.name')->get();
+    $output='<option value="">Select District</option>';
+
+    foreach ($query as $row) {
+       $output .='<option value="'.$row->name.'">'.$row->name.'</option>';
+    }
+    echo $output;
+
+}
+
 }

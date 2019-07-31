@@ -11,7 +11,7 @@
                             	<a class="nav-link" href="{{route('index.admin')}}"> Dashboard</a>        
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-9" aria-controls="submenu-9"><i class="fab fa-fw fa-wpforms"></i></i>Job</a>
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-9" aria-controls="submenu-9"><i class="fab fa-fw fa-wpforms"></i>Job</a>
                                 <div id="submenu-9" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
@@ -23,7 +23,32 @@
                                     </ul>
                                 </div>
                             </li>
-
+                              <li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-9" aria-controls="submenu-9"><i class="fab fa-fw fa-wpforms"></i>Province</a>
+                                <div id="submenu-9" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link {{route::current()->getName() == 'province.get' ? 'active' : ''}}" href="{{route('province.index')}}">All Province</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="">Add job</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                                                          <li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-9" aria-controls="submenu-9"><i class="fab fa-fw fa-wpforms"></i>District</a>
+                                <div id="submenu-9" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link {{route::current()->getName() == 'district.get' ? 'active' : ''}}" href="{{route('district.get')}}">All District</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="">Add District</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </nav>

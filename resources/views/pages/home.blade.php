@@ -6,15 +6,18 @@
             <div class="banner-caption">
                 <div class="col-md-12 col-sm-12 banner-text">
                     <h1>7,000+ Browse Jobs</h1>
-
-                    <form class="form-horizontal">
+                    <form class="form-horizontal" action="{{Route('search.home')}}" method="get" >
                         <div class="col-md-4 no-padd">
-                            <div class="input-group"><input type="text" class="form-control right-bor" id="joblist"
-                                                            placeholder="Skills, Designations, Companies"></div>
+                            <div class="input-group">
+                                <input type="text" class="form-control right-bor" id="joblist" name="searchs" 
+                                                            placeholder="Skills, Designations, Companies">
+                            </div>
                         </div>
                         <div class="col-md-3 no-padd">
-                            <div class="input-group"><input type="text" class="form-control right-bor" id="location"
-                                                            placeholder="Search By Location.."></div>
+                            <div class="input-group">
+                            <input type="text" class="form-control right-bor" id="location" name="locations" 
+                                                            placeholder="Search By Location..">
+                            </div>
                         </div>
                         <div class="col-md-3 no-padd">
                             <div class="input-group">
@@ -96,12 +99,12 @@
                 </div>
 @endforeach
             </div>
-{{-- 
+
         <div class="paginate-center">
      <nav class="nav-lef-right wrap-paginate js-center" aria-label="Page navigation activity">
         {{ $jobs->links() }}
     </nav>
-        </div> --}}
+        </div>
 
 
         </div>

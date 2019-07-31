@@ -14,5 +14,8 @@
     <link rel="stylesheet" href="{{ url('/') }}/admins/assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="{{ url('/') }}/admins/assets/vendor/charts/c3charts/c3.css">
     <link rel="stylesheet" href="{{ url('/') }}/admins/assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
+{{--     <script type="text/javascript" href="https://cdnjs.cloudflare.com/ajax/libs/fdaciuk-ajax/3.0.4/ajax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" type="text/javascript"></script> --}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>Concept - Bootstrap 4 Admin Dashboard Template</title>
 </head>
